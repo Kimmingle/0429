@@ -1,0 +1,277 @@
+
+
+<!DOCTYPE html>
+<html>
+<head>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+<link rel="stylesheet" href="/kma/ex01/css/common.css" />
+
+<meta charset="UTF-8">
+<title>${title }</title>
+<!--<%@ include file="/head.jsp" %>-->
+
+<style>
+	
+.container { width:1400px; }
+
+.page { clear:both; height:100vh; }
+#page1 { background-color:#ececec; height:100vh; }
+#page2 { background-color:#ffffff; }
+#page3 { background-color:#ececec; }
+#page4 { background-color:#ffffff; }
+#page5 { background-size : cover ; }
+#box1-1{  background-size : cover ;  }
+
+.image {
+
+  background-image: url('/pro01/images/한옥마을dark.jpg');
+  background-size: cover;
+   clear:both; height:100vh;
+  
+}
+
+.page_title { font-size:36px; padding-top:2em; text-align:center; }
+th.item1 { width:8%; }
+th.item2 { width:60%; }
+th.item3 { width:20%; }
+</style>
+</head>
+<body>
+<div class="image" >
+<div id="">
+	<div class="row" style="height:110px;">
+		<div class="col-sm-1"> 
+		
+			<div class="logo_wrap">
+				<a href="/pro01"><img src="${hpath }/images/풍남로고.png" alt="풍남동 로고" /></a>
+			</div>
+		
+		</div>
+		
+		<div class="col-sm-9" >
+			<nav id="gnb" style="margin-top:50px;">
+				<ul class="" >
+					<li class="item">
+						<a href="" class="dp1" >풍남동소개</a>
+						<ul class="sub_menu" >
+							<li><a href="${hpath }/intro/origin.jsp">지명유래</a></li>
+							<li><a href="${hpath }/intro/facility.jsp">연혁</a></li>
+							
+							<li><a href="${hpath }/intro/history.jsp">현황</a></li>
+							<li><a href="${hpath }/intro/map.jsp">오시는 길</a></li>
+						</ul>
+					
+					<li class="item">
+						<a href="" class="dp1">문화관광</a>
+						<ul class="sub_menu" >
+							<li><a href="${hpath }/tour/choi.jsp">최명희 문학관</a></li>
+							<li><a href="${hpath }/tour/history.jsp">전주한옥마을 역사관</a></li>
+							<li><a href="${hpath }/tour/history.jsp">경기전</a></li>
+							<li><a href="${hpath }/tour/history.jsp">전동성당</a></li>
+						</ul>
+					</li>
+					
+					<li class="item">
+						<a href="" class="dp1">커뮤니티</a>
+						<ul class="sub_menu">
+							<li><a href="${hpath }/NotiList.do">공지사항</a></li>
+							<li><a href="${hpath }/GetQnaList.do">자료실</a></li>
+							<li><a href="${hpath }/GetQnaList.do">묻고답하기</a></li>
+							<li><a href="${hpath }/GetQnaList.do">자유게시판</a></li>
+							
+						</ul>
+					</li>
+					<li class="item">
+						<a href="" class="dp1">기타 편의시설</a>
+						<ul class="sub_menu">
+							<li><a href="${hpath }/">편의시설</a></li>
+							<li><a href="${hpath }/">공유 운송차 이용</a></li>
+							<li><a href="${hpath }/">주차시설</a></li>
+						</ul>
+					</li>
+					<li class="item">
+						<a href="" class="dp1">마이페이지</a>
+						<ul class="sub_menu" >
+							<c:if test="${empty sid }">
+							<li><a href="${hpath }/member/login.jsp">로그인</a></li>
+							<li><a href="${hpath }/member/term.jsp">회원가입</a></li>
+							</c:if>
+							<c:if test="${not empty sid }">
+							<li><a href="${hpath }/LogOut.do">로그아웃</a></li>
+							<li><a href="${hpath }/EditMember.do?id=${sid }">회원정보</a></li>
+							</c:if>
+							<c:if test="${sid.equals('admin') }">
+							<li><a href="${hpath }/AdminMain.do">관리자로</a></li>
+							</c:if>
+							<li><a href="${hpath }/member/terms.jsp">회원약관</a></li>
+							<li><a href="${hpath }/member/policy.jsp">개인정보처리방침</a></li>
+						</ul>
+						
+					</li>
+				</ul>
+				
+			</nav>
+			
+		</div>
+		
+		<div class="col-sm-2" style="margin-right:0px; ">
+			<form id="" class="d-flex" style="text-align:right;  margin-top:50px ; ">		
+							<input class="form-control me-2"  type="search" placeholder="Search" aria-label="Search" style=" weith:100px; height:38px;">
+						   
+							<button class="btn btn-sm btn-primary" style=" background-color:#000066; border-color:#000066; margin-right:0px; curser:pointer "><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14"  fill="currentColor" class="bi bi-search" viewBox="0 0 16 16" >
+							  <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"/>
+							</svg></button>
+			</form>
+		</div>
+		
+		
+</div> 
+</div>
+<div class="contents" > 
+	<section class="page" id="page1"  >   <!-- 100vh에서 헤더(110px)를 뺀 만큼만 섹션 높이 설정함 -->
+	
+		<figure > <!-- id=vs없앰 -->
+			
+
+			
+				<div class="row" style="float:center;">
+					<div class="col-sm-2">  <!-- 공백 -->
+				</div>
+				
+				<div class="col-sm-5">  <!-- 최근공지 -->
+					<div class="card" style="max-width: 50rem; margin:15px auto; background-color:#FFFFFF;">
+						<div class="card-header" style="height:50px">
+						
+							<h4 class="" style="width:150px">최근 공지사항</h4>
+						
+								
+									<a href="${hpath }/NotiList.do" title="더보기" class="more" style="color:#000099; text-align:right; float:right; text-width:50px; padding-bottom:5px">
+										<i class="fas fa-plus fa-fw"></i> 더보기
+									</a>
+								
+								
+							</div>
+  					<div class="card-body">
+						
+						<table class="table" id="tb3">
+							<thead>
+								<tr>
+									<th class="item1">번호</th>
+									<th class="item2">제목</th>
+									<th class="item3">작성일</th>
+									<th class="item4">조회수</th>
+								</tr>
+							</thead>
+							<tbody>
+								<c:if test="${not empty latestNotiList }">
+									<c:forEach var="dto" items="${latestNotiList }">
+									<tr>
+										<td>${dto.no }</td>
+										<td>
+											<c:if test="${empty sid }">
+											<strong>${dto.title }</strong>
+											</c:if>
+											<c:if test="${not empty sid }">
+											<a href="${path0 }/GetNotice.do?no=${dto.no }">${dto.title }</a>
+											</c:if>
+										</td>
+										<td>${dto.resdate }</td><td>${dto.visited }</td>
+									</tr>
+									</c:forEach>
+								</c:if>
+								<c:if test="${empty latestNotiList }">
+									<tr>
+										<td colspan="4"><strong>공지사항이 존재하지 않습니다.</strong></td>
+									</tr>
+								</c:if>
+							</tbody>
+						</table>
+						 </div>
+						</div>
+					
+				</div>
+				<div class="col-sm-3" style="float:center;">  <!-- 안내 -->
+					<div class="card border-light mb-3" style="max-width: 35rem; max-height: 50rem; margin:15px auto;" >
+			  			<img src="https://tour.jeonju.go.kr/upload_data/popup/popup/171038006605600.jpg" class="card-img-top" alt="https://tour.jeonju.go.kr/board/view.jeonju?boardId=BBS_0000022&menuCd=DOM_000000101012000000&paging=ok&startPage=1&dataSid=11239">
+					  <div class="card-body">
+					    <h5 class="card-title">남부 야시장</h5>
+					    <p class="card-text">남부시장 맛집 총집합! 먹거리 가득한 야시장<br>
+					    위치 : 전주시 완산구 풍남문2길 49 </p>
+					    <a href="https://tour.jeonju.go.kr/board/view.jeonju?boardId=BBS_0000022&menuCd=DOM_000000101012000000&paging=ok&startPage=1&dataSid=11239" class="btn btn-primary" style="background-color:#000066; border-color:#000066;">자세히 보기</a>
+					  </div>
+					</div>
+				</div>
+				<div class="col-sm-2">  <!-- 공백 -->
+				<!--  <div class="alert alert-danger"></div> -->
+				</div>
+			</div>
+		</figure>
+		
+	</div>
+		
+				
+	</section>
+	
+	<section class="page" id="page2">
+		<div style="width:1400px; margin:0 auto;">	
+			<h3 class="page_title">Hot Place(핫 플레이스)</h3>
+			
+		</div>		
+
+	</section>
+	<section class="page" id="page3">
+		<div style="width:1400px; margin:0 auto;">	
+			<h3 class="page_title">최신 묻고 답하기</h3>
+			
+		</div>	
+	</section>
+	<section class="page" id="page4">
+		<div style="width:1400px; margin:0 auto;">	
+			<h3 class="page_title">최근 공지사항</h3>
+			<div class="right_item" style="text-align:right;padding-bottom:12px;">
+				<a href="${hpath }/NotiList.do" title="더보기" class="more">
+					<i class="fas fa-plus fa-fw"></i>더보기
+				</a>
+			</div>
+			<table class="table" id="tb3">
+				<thead>
+					<tr>
+						<th class="item1">번호</th>
+						<th class="item2">제목</th>
+						<th class="item3">작성일</th>
+						<th class="item4">조회수</th>
+					</tr>
+				</thead>
+				<tbody>
+					<c:if test="${not empty latestNotiList }">
+						<c:forEach var="dto" items="${latestNotiList }">
+						<tr>
+							<td>${dto.no }</td>
+							<td>
+								<c:if test="${empty sid }">
+								<strong>${dto.title }</strong>
+								</c:if>
+								<c:if test="${not empty sid }">
+								<a href="${path0 }/GetNotice.do?no=${dto.no }">${dto.title }</a>
+								</c:if>
+							</td>
+							<td>${dto.resdate }</td><td>${dto.visited }</td>
+						</tr>
+						</c:forEach>
+					</c:if>
+					<c:if test="${empty latestNotiList }">
+						<tr>
+							<td colspan="4"><strong>공지사항이 존재하지 않습니다.</strong></td>
+						</tr>
+					</c:if>
+				</tbody>
+			</table>
+		</div>
+	</section>
+</div>
+<div id="footer">
+	
+</div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+</body>
+</html>

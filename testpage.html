@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="testpage.css" />
+    
+    
+</head>
+<body>
+    <section class="page" id="page1"  >
+    <div id="main">  <!--메인 페이지-->
+        <div class="container-fluid "  ><!--부트스트랩 쓰니까 컨테이너에 기본 마진 생김(화면을 전부 다 쓰는 container-fluid 써줌)-->
+            <div class="item-1" > 
+                <img src="/kma/ex01/images/logo.png" width="150" height=auto; style="margin-left: 40px;" >
+            </div>
+            
+            
+            <div class="item-2" style="height: 50px;" >
+                <nav id="gnb" >
+                    
+
+                
+
+                    <ul >
+                        <li class="item"><a href="" class="dp1">풍남동 소개</a>
+                            <ul class="sub_menu" >
+                                <li><a href="pungintro.html">지명유래</a></li>
+                                <li><a href="">연혁</a></li>
+                                <li><a href="">현황</a></li>
+                                <li><a href="">오시는 길</a></li>
+                            </ul>
+                        </li>
+
+                        <li class="item"><a href="" class="dp1">문화관광</a>
+                            <ul class="sub_menu" >
+                                <li><a href="">최명희 문학관</a></li>
+                                <li><a href="">전주한옥마을 역사관</a></li>
+                                <li><a href="">경기전</a></li>
+                                <li><a href="">전동성당</a></li>
+                            </ul>
+                        </li>
+                            <li class="item"><a href="" class="dp1">커뮤니티</a>
+                                <ul class="sub_menu">
+									<li><a href="notice.html">공지사항</a></li>
+									<li><a href="">자료실</a></li>
+									<li><a href="">묻고답하기</a></li>
+									<li><a href="">자유게시판</a></li>
+									
+								</ul>
+                            </li>
+                            <li class="item"><a href="" class="dp1">기타 편의시설</a>
+                                <ul class="sub_menu">
+									<li><a href="">편의시설</a></li>
+									<li><a href="">공유 운송차 이용</a></li>
+									<li><a href="">주차시설</a></li>
+								</ul>
+                            </li>
+                            <li class="item"><a href="" class="dp1">마이페이지</a>
+                                <ul class="sub_menu" >
+									<c:if test="${empty sid }">
+									<li><a href="">로그인</a></li>
+									<li><a href="member.html">회원가입</a></li>
+									</c:if>
+									<c:if test="${not empty sid }">
+									<li><a href="">로그아웃</a></li>
+									<li><a href="">회원정보</a></li>
+									</c:if>
+									<c:if test="${sid.equals('admin') }">
+									<li><a href="">관리자로</a></li>
+									</c:if>
+									<li><a href="">회원약관</a></li>
+									<li><a href="">개인정보처리방침</a></li>
+								</ul>
+                            </li>
+                    </ul>
+                </nav>
+            </div>
+
+            <div class="item-3">
+                <form id="" class="d-flex" style="text-align:right; margin-right: 25px;  margin-left:30px;"  >		
+                    <input class="form-control me-2"  type="search" placeholder="Search" aria-label="Search" style=" width:140px; height:50px; border-radius: 70px 70px 70px 70px;">
+                   
+                    <button class="btn btn-sm btn-primary" style=" background-color:#000066; border-color:#000066; width:50px; height:50px; margin-right:0px; border-radius: 70px 70px 70px 70px;"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14"  fill="currentColor" class="bi bi-search" viewBox="0 0 16 16" >
+                      <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"/>
+                    </svg></button>
+                </form>
+            </div>
+        </div>
+
+        <div class="login">
+            <div class="card text-dark bg-light mb-3" style="width: 20rem; height: 25rem; border-radius: 20px 20px 20px 20px;"> <!--로그인 카드-->
+                
+                <div class="card-body" style="margin: 0 auto;">
+                    <br>
+                    <h5 class="card-title">더 편리하게 이용하세요</h5>
+                    
+                    <div class="card-login" style="margin: 0 auto;">
+                        <form method="post" action="서버의url" id="login-form" style="height: 200px; margin:0px auto;" >
+                                
+                                <table class="table">
+                                    <tbody>
+                                        <tr>
+                                            
+                                                <input type="text" name="id1" id="id" placeholder="Id" class="form-control" style=" margin-bottom:10px ;" required>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            
+                                                <input type="password" name="pw1" id="pw" placeholder="Password" class="form-control" required>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+
+                                <br>
+
+                            <button style="background-color:#000066; border-color:#000066; width:100px; height:40px; margin-right:0px; border-radius: 70px 70px 70px 70px; margin-left:60px ; ">
+                                <p style="color: #FFFFFF; margin: 0; font-size: 15px;">Login</p>
+                            </button>
+                        </form>
+                    </div>
+
+                    <p class="card-text" style="margin-bottom: 15px;">아이디 찾기 | 비밀번호 찾기 |  회원가입</p>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+    <section class="page" id="page2" >  <!-- page2-->
+
+        <div class="container-fluid1" style="margin-top:15px;">
+            <div class="row" style="height:130vh;">
+                <div class="col-1" style="background-color: #FFFFFF; "></div>  <!--공백-->
+                <div class="col-7" style="background-color: #FFFFFF; ">     <!--공지-->
+                        
+                    <div class="card" style="max-width: 70rem; margin:15px auto; background-color:#E9F1FF; border-radius: 20px 20px 20px 20px;">
+                        <div class="card-header" style="height:50px; ">
+                        
+                            <h5 class="" style="width:200px;  margin-top: 4px;">&nbsp;최근 공지사항</h5>
+                        
+                                
+                        </div>
+                    <div class="card-body">
+                        <a href="notice.html" title="더보기" class="more" style="color:#000099; text-decoration:none; float:right; text-size:50px; padding-bottom:5px">
+                            <i class="fas fa-plus fa-fw"></i> 더보기
+                    </a>
+                        <table class="table" id="tb3">
+                            <thead>
+                                <tr>
+                                    <th class="item1">번호</th>
+                                    <th class="item2" style="text-align: center;">제목</th>
+                                    <th class="item3">작성일</th>
+                                    <th class="item4">조회수</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <c:if test="${not empty latestNotiList }">
+                                    <c:forEach var="dto" items="${latestNotiList }">
+                                    <tr>
+                                        <td>7</td>
+                                        <td>
+                                            <c:if test="${empty sid }">
+                                            <strong>제4회 한바탕전주 시민대토론회 참가자 모집  </strong>
+                                            </c:if>
+                                            <c:if test="${not empty sid }">
+                                            <a href="${path0 }/GetNotice.do?no=${dto.no }"></a>
+                                            </c:if>
+                                        </td>
+                                        <td>24-04-22</td><td>55</td>
+                                    </tr>
+                                    </c:forEach>
+                                </c:if>
+                                <c:if test="${empty latestNotiList }">
+                                    <tr>
+                                        <!--<td colspan="4"><strong>공지사항이 존재하지 않습니다.</strong></td>-->
+                                        <tr>
+                                            <td>6</td>
+                                            <td>
+                                                <c:if test="${empty sid }">
+                                                <strong>취약계층 운전면허 취득 지원 안내</strong>
+                                                </c:if>
+                                                <c:if test="${not empty sid }">
+                                                <a href="${path0 }/GetNotice.do?no=${dto.no }"></a>
+                                                </c:if>
+                                            </td>
+                                            <td>24-04-20</td>
+                                            <td>36</td>
+                                        </tr>
+                                        <tr>
+                                            <td>5</td>
+                                            <td>
+                                                <c:if test="${empty sid }">
+                                                <strong>우유팩, 건전지 교환사업 안내</strong>
+                                                </c:if>
+                                                <c:if test="${not empty sid }">
+                                                <a href="${path0 }/GetNotice.do?no=${dto.no }"></a>
+                                                </c:if>
+                                            </td>
+                                            <td>24-04-20</td>
+                                            <td>67</td>
+                                        </tr>
+                                        <tr>
+                                            <td>4</td>
+                                            <td>
+                                                <c:if test="${empty sid }">
+                                                <strong>김제 검산 예다음 장애인 특별공급 추천대상자 모집 안내</strong>
+                                                </c:if>
+                                                <c:if test="${not empty sid }">
+                                                <a href="${path0 }/GetNotice.do?no=${dto.no }"></a>
+                                                </c:if>
+                                            </td>
+                                            <td>24-04-20</td>
+                                            <td>84</td>
+                                        </tr><tr>
+                                            <td>3</td>
+                                            <td>
+                                                <c:if test="${empty sid }">
+                                                <strong>취약계층 운전면허 취득 지원 안내</strong>
+                                                </c:if>
+                                                <c:if test="${not empty sid }">
+                                                <a href="${path0 }/GetNotice.do?no=${dto.no }"></a>
+                                                </c:if>
+                                            </td>
+                                            <td>24-04-20</td>
+                                            <td>101</td>
+                                        </tr>
+                                    </tr>
+                                </c:if>
+                            </tbody>
+                        </table>
+                        </div>
+                        </div>
+                        
+                        <br><br>
+                        <h4>&nbsp;&nbsp;포토존</h4>    <!--포토존-->
+                        <div class="card" style="  background-color:#FFFFFF; border-radius: 0px 30px 0px 30px;">
+                            
+                                
+                                <img src="images/photoZone.png" style="  background-color:#FFFFFF; border-radius: 0px 30px 0px 30px;" alt="">
+                                
+                            
+                            
+                        </div>
+
+                    </div>
+                <div class="col-3" style="background-color:  #FFFFFF; float: left;">    <!--안내-->
+                    <div class="card border-light mb-3" style="max-width: 35rem; max-height: 50rem; margin:15px auto; border-radius: 30px 30px 30px 30px; box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.05);" >
+                        <img src="https://tour.jeonju.go.kr/upload_data/popup/popup/171038006605600.jpg" class="card-img-top" style="border-radius: 30px 30px 0px 0px;" alt="https://tour.jeonju.go.kr/board/view.jeonju?boardId=BBS_0000022&menuCd=DOM_000000101012000000&paging=ok&startPage=1&dataSid=11239">
+                    <div class="card-body">
+                      <h5 class="card-title">남부 야시장</h5>
+                      <p class="card-text">남부시장 맛집 총집합! 먹거리 가득한 야시장<br>
+                      위치 : 전주시 완산구 풍남문2길 49 </p>
+                      <a href="https://tour.jeonju.go.kr/board/view.jeonju?boardId=BBS_0000022&menuCd=DOM_000000101012000000&paging=ok&startPage=1&dataSid=11239" class="btn btn-primary" style="background-color:#000066; border-color:#000066;">자세히 보기</a>
+                    </div>
+                  </div>
+
+                  <br>
+                  <!--자주하는 질문-->
+                  <div class="card" style="max-width: 50rem; padding-top: 5px; background-color:#E9F1FF; border-radius: 30px 30px 30px 0px;">
+                    <div class="card-body" style="margin: 0;" >
+                        <h4 class="" style="width:200px; margin-top: 5px; margin: 0;">&nbsp;QnA</h4>
+                        <p>&nbsp;&nbsp;자주하는 질문</p>
+                    </div>
+                    <div class="card-body">
+                        <table class="table" id="tb3">
+                            <tr>
+                                <td colspan="4">Q. 제4회 시민대토론회는 어디서 신청하나요? </td>
+                            </tr>
+                            <tr>
+                                <td colspan="4">Q. 야시장 안내 팜플랫은 어디서 볼 수 있나요?</td>
+                            </tr>
+                            <tr>
+                                <td colspan="4">Q. 한옥마을 가는길이 궁금해요</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                  
+                </div>
+
+                
+                <div class="col-1" style="background-color: #FFFFFF; "></div>    <!--공백-->
+            </div>
+        </div>
+            
+    </section>
+    <section class="page" id="page3">
+        <footer style="background-color:#00001e; padding-top:40px; padding-bottom:40px; 
+        color:#fff; height: 250px;">
+            <div class="ft_wrap">
+                <nav id="fnb">
+                    <ul>
+                        <li><a href="${hpath }/member/terms.jsp">회원약관</a></li>
+                        <li><a href="${hpath }/member/policy.jsp">개인정보처리방침</a></li>
+                    </ul>
+                </nav>
+                <div id="loc">
+                    <select name="sel" id="sel" onchange="locate()">
+                        <option value="">해당 관광서</option>
+                        <option value="https://www.geumcheon.go.kr/portal/contents.do?key=651">가산동주민센터</option>
+                        <option value="https://www.smpa.go.kr/user/nd19306.do">가산파출소</option>
+                        <option value="https://www.life114.co.kr/html/board/view.asp?M_SEQ=1877802#google_vignette">서울가산디지털우체국</option>
+                    </select>
+                </div>
+                <script>
+                function locate(){
+                    var sel = document.getElementById("sel");
+                    if(sel.value!=""){
+                        window.open(sel.value);
+                    }
+                }
+                </script>
+                <br><br>
+                <div id="copyright">
+                    <p class="addr">(우)08611 서울특별시 금천구 시흥대로73길 70 금천구 가산동 소개, 대표전화 : 02-2627-2114(120 다산콜센터로연결)</p>
+                    <p class="copy">COPYRIGHT(C) SEOUL GASAN INTRO. ALL RIGHTS RESERVED.</p>
+                </div>
+            </div> 
+        </footer>
+        </section>
+
+    
+
+
+</body>
+</html>
